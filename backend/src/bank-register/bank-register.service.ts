@@ -18,8 +18,8 @@ export class BankRegisterService {
     return `This action returns all bankRegister`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} bankRegister`;
+  findByAccount(bankAccountid: string) {
+    return this.bankRegisterModel.find({ bankAccountId: bankAccountid }).sort({ date: -1 });
   }
 
   update(id: number, updateBankRegisterDto: UpdateBankRegisterDto) {

@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { BankRegisterService } from './bank-register.service';
 import { CreateBankRegisterDto } from './dto/create-bank-register.dto';
 import { UpdateBankRegisterDto } from './dto/update-bank-register.dto';
+import { BankAccount } from 'src/bank-account/bank-account.schema';
 
 @Controller('bank-register')
 export class BankRegisterController {
@@ -17,9 +18,9 @@ export class BankRegisterController {
     return this.bankRegisterService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.bankRegisterService.findOne(+id);
+  @Get('/find/:bankAccountid')
+  findOne(@Param('bankAccountid') bankAccountId: string) {
+    return this.bankRegisterService.findByAccount(bankAccountId);
   }
 
   @Patch(':id')
