@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourBank - Banca Online</title>
+    <title>YourBank - Banco Online</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="login-container">
             <div class="login-header">
                 <h1><span class="bank-icon">🏦</span>YourBank</h1>
-                <p>Banca Online Segura</p>
+                <p>Banco Online</p>
             </div>
             
             <form id="loginForm" class="login-form">
@@ -89,7 +89,7 @@
                     <form class="transaction-form" id="depositForm">
                         <div class="form-group">
                             <label for="depositAmount">Monto a Ingresar</label>
-                            <input type="number" id="depositAmount" step="0.01" min="0" required>
+                            <input type="number" id="depositAmount" step="0.01" min="1" required>
                         </div>
                         <div class="form-group">
                             <label for="depositDescription">Descripción</label>
@@ -108,11 +108,11 @@
                     <form class="transaction-form" id="withdrawForm">
                         <div class="form-group">
                             <label for="withdrawAmount">Monto a Retirar</label>
-                            <input type="number" id="withdrawAmount" step="0.01" min="0" required>
+                            <input type="number" id="withdrawAmount" step="0.01" min="1" required>
                         </div>
                         <div class="form-group">
                             <label for="withdrawDescription">Descripción</label>
-                            <input type="text" id="withdrawDescription" required>
+                            <input type="text" id="withdrawDescription" required value="Retiro de Dinero"> 
                         </div>
                         <div class="form-buttons">
                             <button type="button" class="btn btn-secondary cancel-btn">Cancelar</button>
@@ -137,6 +137,28 @@
                             <label for="transferDescription">Descripción</label>
                             <input type="text" id="transferDescription" required>
                         </div>
+                        <div class="demo-credentials">
+                            <h4>Credenciales de Prueba:</h4>
+                            <ul>
+                                <li id="cbuJuan">
+                                    <strong>Usuario:</strong> Juan | <strong>Cbu:</strong> 687672ed0619cf65beb3bba5
+                                    <button class="btn-copy" data-cbu="687672ed0619cf65beb3bba5">Copiar</button>
+                                </li>
+                                <li id="cbuPedro">
+                                    <strong>Usuario:</strong> Pedro | <strong>Cbu:</strong> 687673460619cf65beb3bba9
+                                    <button class="btn-copy" data-cbu="687673460619cf65beb3bba9" data-user="Pedro">Copiar</button></li>
+                                <li id="cbuMaria">
+                                    <strong>Usuario:</strong> Maria | <strong>Cbu:</strong> 687673560619cf65beb3bbb1
+                                    <button class="btn-copy" data-cbu="687673560619cf65beb3bbb1" data-user="Maria">Copiar</button></li>
+                                <li id="cbuCarla">
+                                    <strong>Usuario:</strong> Carla | <strong>Cbu:</strong> 6876734e0619cf65beb3bbad
+                                    <button class="btn-copy" data-cbu="6876734e0619cf65beb3bbad" data-user="Carla">Copiar</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="error-container" id="transferErrorContainer">
+                            <strong class="error">Error:</strong> <span class="error-message" id="transferError"></span>
+                        </div>
                         <div class="form-buttons">
                             <button type="button" class="btn btn-secondary cancel-btn">Cancelar</button>
                             <button type="submit" class="btn btn-primary">Confirmar Transferencia</button>
@@ -156,24 +178,6 @@
                         </div>
                         <div id="movementsList" class="movements-list">
                             <!-- Aquí se cargarán los movimientos dinámicamente -->
-                            <div class="movement-item">
-                                <span>15/07/2025</span>
-                                <span>Depósito inicial</span>
-                                <span class="amount positive">+$1,000.00</span>
-                                <span>Ingreso</span>
-                            </div>
-                            <div class="movement-item">
-                                <span>14/07/2025</span>
-                                <span>Transferencia a Juan Pérez</span>
-                                <span class="amount negative">-$250.00</span>
-                                <span>Transferencia</span>
-                            </div>
-                            <div class="movement-item">
-                                <span>13/07/2025</span>
-                                <span>Retiro ATM</span>
-                                <span class="amount negative">-$100.00</span>
-                                <span>Retiro</span>
-                            </div>
                         </div>
                     </div>
                     <div class="form-buttons">
