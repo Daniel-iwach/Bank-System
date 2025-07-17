@@ -12,9 +12,24 @@ export class BankAccountController {
     return this.bankAccountService.create(createBankAccountDto);
   }
 
-  @Put('/deposit/:userId')
-  deposit(@Param('userId') userId: string, @Body('amount') amount: number) {
-    return this.bankAccountService.depositMoney(userId, amount);
+  @Put('/deposit/:accountId')
+  deposit(@Param('accountId') accountId: string, @Body('amount') amount: number) {
+    return this.bankAccountService.depositMoney(accountId, amount);
+  }
+
+  @Put('/withdraw/:accountId')
+  withdraw(@Param('accountId') accountId: string, @Body('amount') amount: number) {
+    return this.bankAccountService.withdrawMoney(accountId, amount);
+  }
+
+  @Get('/exist/:cbu')
+  exist(@Param('cbu') cbu: string) {
+    return this.bankAccountService.existAccount(cbu);
+  }
+
+  @Get("/findUser/:accountId")
+  findUserByAccount(@Param('accountId') accountId: string) {
+    return this.bankAccountService.findUserByAccount(accountId);
   }
 
   @Get()
