@@ -38,8 +38,7 @@ Actualmente, el proyecto se encuentra en una fase funcional completa en cuanto a
 
 - Integrar autenticación con **JWT** y manejo de tokens desde cookies  
 - Rediseñar y mejorar el frontend  
-- **Migrar a arquitectura de microservicios** para escalar mejor el sistema  
-- **Desplegar en la nube** (probablemente en Railway o Render)
+
 
 ---
 
